@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Dream House-FCM.41.008.192.23</title>
+    
+    <!-- A-Frame Core -->
+    <script src="script/aframe.min.js"></script>
+    
+    <!-- Water Shader -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/js/shaders/WaterShader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-water@1.0.0/dist/aframe-water.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="house" src="casa_ultra/scene.gltf"></a-asset-item>
+        <a-asset-item id="sky" src="free_-_skybox_above_the_clouds/scene.gltf"></a-asset-item>
+      </a-assets> 
+  
+      <a-entity gltf-model="#house" position="0 4 0" scale="25 25 25"></a-entity>
+      <a-entity gltf-model="#sky" scale="20 20 20" position="1 1 1"></a-entity>
+      <a-entity gltf-model="#house" position="0 0 0" scale="25 25 25"></a-entity>
+
+      <!-- Floor -->
+      <a-plane src="/Texture/floor.jpg" width="10000" height="10000" rotation="-90 30 -1089" repeat="100 100 100"></a-plane>
+
+      <!-- Animated Pool -->
+      <a-entity id="pool">
+        <a-plane water 
+                 width="15" 
+                 height="10" 
+                 rotation="-90 0 0"
+                 position="50 0.2 -20"
+                 color="#1ca3ec"
+                 opacity="0.8"
+                 normalScale="10 10">
+        </a-plane>
+      </a-entity>
+
+      <a-camera position="398 36 432" acceleration="1000"></a-camera>
+    </a-scene>
+  </body>
+</html>
+
